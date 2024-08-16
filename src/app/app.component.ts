@@ -5,6 +5,7 @@ import { HomeComponent } from './core/home/home.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { ContactHomepageComponent } from './features/contact-homepage/contact-homepage.component';
 import { NavbarComponent } from "./core/navbar/navbar.component";
+import { ScrollToTopComponent } from './core/scroll-to-top/scroll-to-top.component';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,8 @@ import { NavbarComponent } from "./core/navbar/navbar.component";
   imports: [
     RouterOutlet, HeaderComponent,
     HomeComponent, FooterComponent,
-    ContactHomepageComponent, NavbarComponent
+    ContactHomepageComponent, NavbarComponent,
+    ScrollToTopComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

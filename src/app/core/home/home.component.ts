@@ -9,7 +9,7 @@ import { VideosComponent } from '../../features/videos/videos.component';
   standalone: true,
   imports: [CommonModule, AboutComponent, GalleryComponent, VideosComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   carouselTimer = 3000;
