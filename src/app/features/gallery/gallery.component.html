@@ -1,0 +1,47 @@
+
+<div class="main-content">
+  <div class="overlay">
+    <header class="header text-center">
+      <h1>Our Products</h1>
+      <div class="line mb-5"></div>
+    </header>
+    <div class="container gallery-lg justify-content-center">
+      @for (item of items; track $index) {
+        <div data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="selectImage($index)" style="background-image: url('{{item}}');">
+          <div class="content">
+            <h2>Pure Linen</h2>
+            <span>Pure Comfort</span>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div id="mz-gallery-container">
+
+      <div id="mz-gallery">
+        
+        @for (item of items; track $index) {
+          <figure data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="selectImage($index)">
+            <img [src]="item" alt="Pure Linen, Pure Comfort" width="100" height="100" style="max-width: 200px;">
+          </figure>
+        }
+        
+    
+      </div>
+    
+    </div>
+  
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <img [src]="selectedImage" class="img-fluid">
+      </div>
+      <div class="modal-footer mt-2">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

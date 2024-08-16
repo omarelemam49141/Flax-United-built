@@ -1,0 +1,44 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Flax United Import & Export</h5>
+        <p>Pure Linen, Pure Comfort!</p>
+      </div>
+      <button 
+        type="button" 
+        *ngFor="let img of images; let i = index"
+        [attr.data-bs-target]="'#carouselExampleIndicators'"
+        [attr.data-bs-slide-to]="i"
+        [class.active]="i === 0"
+        [attr.aria-current]="i === 0 ? 'true' : null"
+        [attr.aria-label]="'Slide ' + (i + 1)"
+      ></button>
+    </div>
+    <div class="carousel-inner carousel-container">
+      <div 
+        class="carousel-item" 
+        *ngFor="let img of images; let i = index"
+        [class.active]="i === 0"
+        [attr.data-bs-interval]="3000"
+      >
+        <div class="overlay"></div>
+        <img [src]="img" class="d-block w-100 img-fluid" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+    <app-gallery></app-gallery>
+
+    <app-about></app-about>
+
+    <app-videos></app-videos>
+
+  

@@ -1,0 +1,117 @@
+@import "../../styles/main.scss";
+
+.logo-img {
+    width: 40px;
+    position: relative;
+    top: -3px;
+}
+
+.navbar {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: $bg-main-color !important;
+    li {
+        padding: 0 0.5rem;
+        a {
+            color: $main-color;
+            transition: all 0.3s;
+            position: relative;
+            padding: 0;
+
+            &::after {
+                content: "";
+                width: 100%;
+                transform: scaleX(0);
+                transition: all 0.3s;
+                background-color: $secondary-color;
+                position: absolute;
+                bottom: -5px;
+                right: 0;
+                height: 2px;
+            }
+            &.active {
+                color: $secondary-color !important;
+                &::after {
+                    transform: scaleX(1) !important;
+                }
+            }
+            &:hover {
+                color: $secondary-color;
+            }
+            &:hover::after {
+            transform: scaleX(1);
+            
+        }
+        }
+    }
+
+    h1 {
+        font-family: "Elsie", serif;
+  font-weight: 900;
+  font-style: normal;
+        margin-top: 0;
+        margin-bottom: 0;
+        background-color: $bg-main-color;
+        color: $main-color;
+        font-size: 40px;
+        
+        span {
+            color: $secondary-color;
+        }
+    }
+
+    .logo {
+        text-align: center;
+        img {
+            max-width: 120px;
+            height: auto;
+        }
+    }
+}
+
+.navbar-toggler {
+    border-color: $secondary-color; /* Bright border color */
+    span {
+        color: $secondary-color; /* Bright border color */
+    }
+  }
+
+  
+  .navbar-toggler:focus {
+    box-shadow: none; /* Remove default focus outline */
+  }
+  
+  /* Optional: Custom background color for the toggler */
+  .navbar-toggler {
+    background-color: $main-color; /* Bright background color */
+    transition: all 0.3s;
+  }
+  
+  .navbar-toggler:hover {
+    background-color: $secondary-color; /* Slightly darker on hover */
+  }
+
+  .navbar-collapse{
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    li {
+        margin-bottom: 10px;
+    }
+
+    a:not(.navbar-brand) {
+        width: fit-content;
+        margin: auto;
+    }
+}
+
+@media (max-width: 767.98px) {
+    
+    .navbar-toggler {
+        margin: 1rem auto;
+    }
+
+    .navbar-brand {
+        margin: 0.5rem auto;
+    }
+}

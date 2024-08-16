@@ -26,15 +26,21 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              "src/assets",
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/cyan-orange.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -96,6 +102,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/cyan-orange.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -103,5 +110,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "7005dffc-9402-4af0-a1ac-9f7df3d5f35c"
   }
 }

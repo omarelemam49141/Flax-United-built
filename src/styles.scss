@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Apply the custom scrollbar to the entire document */
+*::-webkit-scrollbar {
+    width: 30px; /* Width of the scrollbar */
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: #d2b48c; /* Light tan color for the scrollbar track */
+    border-radius: 10px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #8b5a2b; /* Darker brown for the scrollbar thumb */
+    border-radius: 10px;
+    border: 3px solid #d2b48c; /* Adds a border that matches the track */
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #a0522d; /* Slightly lighter brown on hover */
+  }
+  
+  /* Scrollbar for Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #8b5a2b #d2b48c; /* Dark brown thumb with light tan track */
+  }
+  
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

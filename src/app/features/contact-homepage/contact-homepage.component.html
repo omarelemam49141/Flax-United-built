@@ -1,0 +1,62 @@
+<app-spinner></app-spinner>
+
+<button class="fixed-contact-btn" (click)="toggleForm()">
+    <i class="fa-solid fa-envelope"></i>
+</button>
+
+<div *ngIf="formVisible" class="contact-form-dropdown">
+  <form (ngSubmit)="sendEmail()" [formGroup]="emailForm">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="label" for="name">Full Name</label>
+                <input type="text" class="form-control" formControlName="fullName" name="name" id="name" placeholder="Name">
+                <div class="my-2" *ngIf="emailForm.get('fullName')?.invalid && emailForm.get('fullName')?.touched">
+                    <span class="my-t" class="text-danger" *ngIf="emailForm.get('fullName')?.errors?.['required']">Name is required</span>
+                    <span class="my-t" class="text-danger" *ngIf="emailForm.get('fullName')?.errors?.['minlength']">Name must be at least 3 characters</span>
+                    <span class="my-t" class="text-danger" *ngIf="emailForm.get('fullName')?.errors?.['maxlength']">Name must be at most 100 characters</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12"> 
+            <div class="form-group">
+                <label class="label" for="email">Email Address</label>
+                <input type="email" class="form-control" formControlName="email" name="email" id="email" placeholder="Email">
+                <div class="my-2" *ngIf="emailForm.get('email')?.invalid && emailForm.get('email')?.touched">
+                    <span class="mt-2" class="text-danger" *ngIf="emailForm.get('email')?.errors?.['required']">Email is required</span>
+                    <span class="mt-2" class="text-danger" *ngIf="emailForm.get('email')?.errors?.['email']">Email is not valid</span>
+                    <span class="mt-2" class="text-danger" *ngIf="emailForm.get('email')?.errors?.['maxlength']">Email must be at most 200 characters</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="label" for="subject">Subject</label>
+                <input type="text" class="form-control" formControlName="subject" name="subject" id="subject" placeholder="Subject">
+                <div class="my-2" *ngIf="emailForm.get('subject')?.invalid && emailForm.get('subject')?.touched">
+                    <span class="mt-2" class="text-danger" *ngIf="emailForm.get('subject')?.errors?.['required']">Subject is required</span>
+                    <span class="mt-2" class="text-danger" *ngIf="emailForm.get('subject')?.errors?.['minlength']">Subject must be at least 3 characters</span>
+                    <span class="mt-2" class="text-danger" *ngIf="emailForm.get('subject')?.errors?.['maxlength']">Subject must be at most 200 characters</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="label" for="#">Message</label>
+                <textarea name="message" formControlName="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+                <div class="my-2" *ngIf="emailForm.get('message')?.invalid && emailForm.get('message')?.touched">
+                    <span class="mt-2" class="text-danger" *ngIf="emailForm.get('message')?.errors?.['required']">Message is required</span>
+                    <span class="mt-2" class="text-danger" *ngIf="emailForm.get('message')?.errors?.['minlength']">Message must be at least 3 characters</span>
+                    <span class="mt-2" class="text-danger" *ngIf="emailForm.get('message')?.errors?.['maxlength']">Message must be at most 1000 characters</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="submit" [ngClass]="{'btn-disabled': emailForm.invalid}" [disabled]="emailForm.invalid" value="Send Message" class="btn btn-primary">
+                <div class="submitting"></div>
+            </div>
+        </div>
+    </div>
+  </form>
+</div>

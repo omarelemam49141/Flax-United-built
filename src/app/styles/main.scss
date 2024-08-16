@@ -1,0 +1,77 @@
+$main-color: #ddca8a;
+$secondary-color: #a7804e;
+$bg-main-color: #0d1824;
+$bg-secondary-color: #0d0d0d;
+$main-font: 300 normal "Poppins", sans-serif;
+
+.header .line {
+    width: 100px;
+    height: 4px;
+    background-color: $secondary-color;
+    margin: 0 auto;
+    position: relative;
+    animation: slideLine 2s ease-in-out infinite;
+  }
+
+  @keyframes slideLine {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 150px;
+    }
+    100% {
+      width: 0;
+    }
+  }
+
+  .main-content {
+    width: 100%;
+    background-image: url("../../assets/images/linen-bg.jpeg.jpg");
+    background-size: cover, cover;
+  background-blend-mode: overlay;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+    .overlay {
+      width: 100%;
+      height: 100%;
+      background: rgba(167, 128, 78, 0.7);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 100px !important;
+      .header h1 {
+        font-size: 36px;
+        color: white;
+        margin: 0;
+        padding-bottom: 10px;
+        font: $main-font !important;
+        font-weight: 500 !important;
+      }
+    }
+  } 
+
+
+.modal-content {
+  background-color: rgba($color: $secondary-color, $alpha: 0.4);
+}
+
+.modal-dialog {
+  background-image: url("../../assets/images/linen-bg.jpeg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin:auto;
+  .modal-content {
+    padding: 20px;
+  }
+  .modal-footer {
+    button {
+      padding: 10px;
+    }
+  }
+}
+
+
+  
